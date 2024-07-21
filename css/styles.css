@@ -519,8 +519,8 @@ img {
 
 .footer-form {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 24px;
 }
 
 .footer-form-text {
@@ -530,7 +530,6 @@ img {
   letter-spacing: 0.02em;
   color: #fff;
   margin-bottom: 16px;
-  max-width: 453px;
 }
 
 .footer-input {
@@ -542,8 +541,9 @@ img {
   background-color: transparent;
   outline: transparent;
   padding-left: 16px;
-  padding-right: 16px;
-  margin-right: 24px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
 }
 
 .footer-input::placeholder {
@@ -556,7 +556,7 @@ img {
 .footer-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 4px;
   padding: 8px 24px;
   min-width: 165px;
@@ -585,8 +585,9 @@ img {
   background-color: #404bbf;
 }
 
-.footer-icon {
+.footer-send-icon {
   fill: #fff;
+  margin-left: 16px;
 }
 
 /* ------FOOTER------ */
@@ -602,6 +603,8 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -621,28 +624,37 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open) .modal {
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 .modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
-  border-radius: 100%;
-  margin-left: auto;
+  border-radius: 50%;
+
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: #404bbf;
+  border: none;
 }
 
 .modal-close-btn:hover .modal-close-icon,
@@ -755,7 +767,7 @@ img {
   margin-right: 8px;
 }
 
-.modal-check:checked + .modal-check-text span {
+.modal-check:checked + .modal-check-text > span {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
