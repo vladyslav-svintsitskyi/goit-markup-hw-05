@@ -762,11 +762,9 @@ img {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  display: flex;
-  align-items: center;
 }
 
-.modal-check-text .checked-icon {
+.checked-icon {
   width: 16px;
   height: 16px;
   border-radius: 2px;
@@ -779,9 +777,10 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 8px;
 }
 
-.modal-check:checked + .modal-check-text span {
+.modal-check:checked + .modal-check-text > .checked-icon {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
