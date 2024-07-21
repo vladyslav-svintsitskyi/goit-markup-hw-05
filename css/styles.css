@@ -739,10 +739,9 @@ img {
   color: #8e8f99;
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
-.modal-check-text span {
+.modal-check-text .checked-icon {
   width: 16px;
   height: 16px;
   border-radius: 2px;
@@ -751,12 +750,20 @@ img {
   align-items: center;
   justify-content: center;
   fill: transparent;
+  margin-right: 8px;
 }
 
 .modal-check:checked + .modal-check-text span {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
+}
+
+.privacy-policy {
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
 }
 
 .checkbox {
